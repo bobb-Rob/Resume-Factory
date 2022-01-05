@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/resume-factory/static/css/main.e27ce881.css",
+    "main.js": "/resume-factory/static/js/main.56250537.js",
+    "index.html": "/resume-factory/index.html",
+    "main.e27ce881.css.map": "/resume-factory/static/css/main.e27ce881.css.map",
+    "main.56250537.js.map": "/resume-factory/static/js/main.56250537.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e27ce881.css",
+    "static/js/main.56250537.js"
+  ]
+}
