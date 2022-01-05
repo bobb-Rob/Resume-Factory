@@ -72,9 +72,48 @@ const CVBody = () => {
         return eduItem
     })
     setEducation(         
-        [...newEducation])
-        
+        [...newEducation])        
     }
+
+
+    const addEducation = () => {
+        setEducation([
+            ...education, {
+                universityName: '',
+                city: '',
+                degree: '',
+                subject: '',
+                from: '',
+                to: '',            
+                id: uniqid(),
+                submitted: false,
+            },
+        ])
+    }
+
+    const deleteEducation = (id) => {
+        const newEducation = education.filter((educationItem) => educationItem.id !== id);
+        setEducation([...newEducation]);
+    }
+
+
+    const  onEducationSubmit = (e) => {
+        e.preventDefault();
+        setEducation(education.map((edu) => {
+            return {...edu, submitted: true}
+        })) 
+        console.log('submitted clicked')         
+    }
+
+    const editEducation = (e) => {
+        e.stopPropagation();
+        setEducation(education.map((edu) => {
+            return {...edu, submitted: false}
+        }))
+        console.log(education)
+        console.log('edit-btn clicked') 
+    }
+
 
     console.log(education)
 
@@ -86,7 +125,9 @@ const CVBody = () => {
             />
 
             <Education  allEducation = {education}
-            onChange = {onChangeEducation}
+            onChange = {onChangeEducation} addEducation = {addEducation}
+            deleteEducation = {deleteEducation}  onEducationSubmit = { onEducationSubmit}
+            editEducation = {editEducation}
             />
 
 

@@ -38,14 +38,14 @@ const Education = (props) => {
                      value={education.to} onChange={(e) => onChange(e, education.id)}
                      id={uniqid()} />    
 
-                      <button type='button' className='delete_btn btn' 
-                      onClick = {() => { notEmpty(); return deleteEducation(education.id); } }
+                      <button type='button' className='btn' id='delete-btn'
+                      onClick = {() => { return deleteEducation(education.id); } }
                       >Delete</button>     
                  </div>
          )
      })
 
-     const notEmpty = () => alleducation.length > 0 ? true: false;
+     const notEmpty = () => allEducation.length > 0 ? true: false;
 
      const notSubmitted = function(){
          let getStatus = allEducation.some((education) =>
@@ -59,16 +59,15 @@ const Education = (props) => {
 
      console.log(alleducation)
      console.log(notEmpty())
-     console.log(notSubmitted())              
+     console.log('not Submitted is ' + notSubmitted())              
 
 
     return (
-        <div className='section-div' >  
-                <h2>Education</h2> 
-                <form id='cvForm' onSubmit={(e) => onEducationSubmit(e)} >
-                    
+        <div id='section-div' >  
+                <h2 className='section-header' >Education</h2> 
+                <form id='cvForm' onSubmit={(e) => onEducationSubmit(e)} >                   
                                                       
-                    {notSubmitted() && alleducation}
+                {notSubmitted() && alleducation}
                                      
                 <div className='education_submit_edit_btn' >
                     { (notEmpty() && notSubmitted())  &&                       
@@ -77,14 +76,14 @@ const Education = (props) => {
                                 form='cvForm'  className='submit_btn btn'                        
                                 >Submit this Section</button>                               
 
-                                <button type='button' className='edit_btn btn' 
+                                <button type='button' className='add-btn btn' 
                                 onClick={(e) => addEducation(e) }>
                                 Add</button>
                             </div>                               
                             }                                       
                        
                         { (!notEmpty() && !notSubmitted())   && 
-                         <button type='button' className='edit_btn btn' 
+                         <button type='button' className='add-btn btn' 
                          onClick={(e) => addEducation(e) }>
                          Add</button>
                         }

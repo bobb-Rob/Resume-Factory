@@ -44,13 +44,20 @@
 }
 
 #section-div h2{
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
-.submit_btn{
-    color: var(--pinkBlend);
-    background: var(--mainBlue);  
-} 
+.add-btn{
+    margin-left: 10px;
+    min-width: 100px !important;
+}
+
+#delete-btn{
+    border: 2px solid var(--mainBlue);
+    background: var(--lightPinkBlend);
+    color: var(--mainBlue);
+    min-width: 70px;
+}
 
 #next-btn{       
   display: none;
@@ -61,11 +68,16 @@
     min-width: 150px;
     border-radius: 10PX;
     font-family: 'Merriweather Sans';
-    font-size: 20px;
+    font-size: 16px;
     outline: none;
     border: none;
     color: var(--pinkBlend);
     background: var(--mainBlue);
+    margin-bottom: 10px;
+}
+
+.btn:hover{
+    box-shadow: 2px 1px 7px -2px #1E1E1E;
 }
 
 form{
@@ -120,7 +132,7 @@ textarea{
 
     #next-btn{    
         display: inline;   
-        margin-left: 40px;
+        margin-left: 10px;
         min-width: 70px;
     }
 
@@ -130,7 +142,7 @@ textarea{
 @media screen and (max-width: 650px) {
     #next-btn{    
         display: inline;   
-        margin-left: 40px;
+        margin-left: 10px;
         min-width: 70px;
     }
 
